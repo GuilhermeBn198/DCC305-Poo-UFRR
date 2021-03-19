@@ -1,0 +1,13 @@
+Classes = objetos
+Atributos = características desses objetos
+Métodos = coisas que os objetos conseguem fazer
+
+Class: Camera
+Atribute: Largura, Altura, Comprimento, Area, Marca, Modelo
+Method: setLigar, getLigar, setTirarFoto, getTirarFoto, setGravarVideo,getGravarVideo
+Class: Ventilador
+Atribute: Largura, Altura, Comprimento, Area, Marca, Modelo
+Method: setLigar, getLigar,setLigar, getLigar, setDesligar, getDesligar, setMudarVelocidade, getMudarVelocidade
+Class: Calça
+Atribute: Tamanho,  Marca, Modelo, Material
+Method: setVestir, getVestir, setTirar, getTirar, setLavar, getLavar
