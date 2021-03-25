@@ -1,4 +1,4 @@
-package Code.Aula2;
+package Code.Aula1e2;
 
 public class Aula2ex1Bola {
     //ATRIBUTOS

@@ -1,9 +1,11 @@
-
+package Code.Aula1e2;
 /*
-package Code.Aula2;//Organiza classes para serem usadas conforme seus diretórios
+
 **************
 DESCOMENTAR ESSE CÓDIGO CASO QUERIA EXECUTÁ-LO(E COMENTAR OUITRO CÓDIGO MAIN AO MESMO TEMPO)
 ***************
+
+package Code.Aula2;//Organiza classes para serem usadas conforme seus diretórios
 
 import java.util.Scanner; //importa a CLASSE Scanner[COM SUAS RESPECTIVAS FUNÇÕES{METHODS/METODOS}] (que permite ler um valor) do pacote java original
 

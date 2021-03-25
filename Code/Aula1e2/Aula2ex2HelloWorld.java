@@ -1,9 +1,11 @@
-package Code.Aula2;
+package Code.Aula1e2;
 /*
 
 **************
 DESCOMENTAR ESSE CÓDIGO CASO QUERIA EXECUTÁ-LO(E COMENTAR OUITRO CÓDIGO MAIN AO MESMO TEMPO)
 ***************
+
+package Code.Aula2;
 
 public class Aula1ex2HelloWorld {
     public static void main(String[] args) { //o miolo do programa começa aqui

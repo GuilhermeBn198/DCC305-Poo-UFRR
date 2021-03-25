@@ -1,3 +1,10 @@
+package Code.Aula1e2;
+/*
+
+**************
+DESCOMENTAR ESSE CÓDIGO CASO QUERIA EXECUTÁ-LO(E COMENTAR OUITRO CÓDIGO MAIN AO MESMO TEMPO)
+***************
+
 package Code.Aula2; //identifica o diretorio do pacote de classes presentes
 
 import java.util.Scanner; //import da classe e metodos scanner
@@ -20,3 +27,5 @@ public class Aula2ExerEmSala3 {
         System.out.print("\n\nO valor do seu IMC é:  "+imc+"\n\n\n"); //serve para externalizar o que estiver escrito dentro de seu parametro
     }
 }
+
+*/
