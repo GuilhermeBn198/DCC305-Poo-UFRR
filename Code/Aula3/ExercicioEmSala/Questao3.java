@@ -1,5 +1,10 @@
-package Code.Aula3.ExercicioEmSala;
+/*
 
+**************
+DESCOMENTAR ESSE CÓDIGO CASO QUERIA EXECUTÁ-LO(E COMENTAR OUITRO CÓDIGO MAIN AO MESMO TEMPO)
+***************
+
+package Code.Aula3.ExercicioEmSala;
 import java.util.Scanner;
 
 public class Questao3 {
@@ -21,3 +26,4 @@ public class Questao3 {
     }
 
 }
+ */
