@@ -1,5 +1,4 @@
-package Code.Aula4.Aula4ExCriandoEInstanciandoClasse;
-
+package Code.Aula4.Aula4ExCriandoEInstanciandoClasse.conta;
 public class Programa {
 
     public static void main(String[] args) {
