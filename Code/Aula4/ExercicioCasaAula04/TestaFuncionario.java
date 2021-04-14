@@ -22,14 +22,13 @@ public class TestaFuncionario {
         f1.mostra();
         f2.mostra();
         System.out.println("\n\n");
-        
+       /* 
         if (f1 == f2) { //resposta questao 4
             System.out.println("os funcionários cadastrados são iguais!");
         } else {
             System.out.println("cadastro de funcionarios efetuado com sucesso!\n");
         } //resposta questão 5: quando se cria 2 objetos com new os espaços na memoria que guardam suas informações, mesmo que iguais, são diferentes, então no if dará false, porém se declaro uma variavel referenciando o primeiro funcionario e testo no if, sempre dará true pois as duas variaveis estão referenciando a 1 unico objeto em uma posição da memoria.
         
-
-       
+        */
     }    
 }
