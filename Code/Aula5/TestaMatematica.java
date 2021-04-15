@@ -1,17 +1,17 @@
 public class TestaMatematica {
     public static void main(String[] args) {
         Matematica mat = new Matematica();
-        mat.setx(5.0);
-        mat.sety(5.0);
-        mat.setz(5.0);
-        mat.setxx(5.0);
+        mat.setx(1000.0);
+        mat.sety(15.0);
+        mat.setz(10.0);
+        mat.setxx(25.0);
         mat.setyy(5.0);
-        Integer quantifi = 2;
+        Integer quantifi = 4;
         //String seletor = "add";
-        //String seletor = "sub";
+        String seletor = "sub";
         //String seletor = "mult";
         //String seletor = "div";
-        String seletor = "pot";
+        //String seletor = "pot";
         switch (quantifi) {
             case 2:
                 if (seletor == "add") {
