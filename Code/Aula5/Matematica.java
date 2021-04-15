@@ -94,7 +94,5 @@ public class Matematica {
     public Double pot5(Double x, Double y, Double z, Double xx, Double yy){
         return Math.pow(Math.pow(Math.pow(Math.pow(x, y), z), xx), yy);
     }
-    
-
 
 }
