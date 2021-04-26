@@ -1,3 +1,4 @@
+package questao1e2;
 // public class ClasseCalculo extends AgendaMain{
 
 //     Integer numedisciplinas;

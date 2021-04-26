@@ -1,3 +1,4 @@
+package questao1e2;
 import java.util.Scanner; //Biblioteca com os métodos de entrada
 public class AgendaMain {
 		//Pular linha

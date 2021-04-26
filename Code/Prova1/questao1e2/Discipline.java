@@ -1,3 +1,5 @@
+package questao1e2;
+
 class Discipline extends AgendaMain{
 
     protected static Integer numdisciplinastot = 0; //Atributo estático da classe

@@ -1,3 +1,5 @@
+package questao1e2;
+
 class PendentActivities extends Discipline  {
     protected Integer dataEntregaM;
     protected Integer dataEntregaD;
