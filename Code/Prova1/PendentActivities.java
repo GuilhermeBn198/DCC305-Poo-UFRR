@@ -3,7 +3,11 @@ class PendentActivities extends Discipline  {
     protected Integer dataEntregaD;
     protected Double nota;
     protected String nomeativ;
+    protected static Double notassoma = 0.0;
 
+    PendentActivities(){
+        PendentActivities.notassoma = this.nota;
+    }
     protected void setdataEntregaD(Integer dataEntregaD){ //define dataEntregaD
             this.dataEntregaD = dataEntregaD;
     }
@@ -28,4 +32,5 @@ class PendentActivities extends Discipline  {
     protected String getNomeAtiv(){
         return nomeativ;
     }
+    
 }
