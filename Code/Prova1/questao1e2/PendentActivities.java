@@ -1,14 +1,16 @@
 package questao1e2;
 
-class PendentActivities extends Discipline  {
+class PendentActivities {
+    
+    
     protected Integer dataEntregaM;
     protected Integer dataEntregaD;
     protected Double nota;
     protected String nomeativ;
-    protected static Double notassoma = 0.0;
-
-    PendentActivities(){
-        PendentActivities.notassoma = this.nota;
+    protected Integer numativs;
+    
+    protected void setNumAtivs(Integer numativs){
+        this.numativs = numativs;
     }
     protected void setdataEntregaD(Integer dataEntregaD){ //define dataEntregaD
             this.dataEntregaD = dataEntregaD;
@@ -34,5 +36,7 @@ class PendentActivities extends Discipline  {
     protected String getNomeAtiv(){
         return nomeativ;
     }
-    
+    protected Integer getNumAtivs(){
+        return numativs;
+    }
 }

@@ -1,23 +1,22 @@
 package questao1e2;
 
-class Discipline extends AgendaMain{
-
-    protected static Integer numdisciplinastot = 0; //Atributo estático da classe
-    //Atributos do objetos tipo Discipline
+class Discipline{
     protected Object[] pendentes;
     protected Integer horario;
     protected String professor;
     protected String nomedisciplina;
-    protected Integer numatividades;
+    protected Integer nAtiv;
+    protected PendentActivities atv[];
     
-        //Iterador de numdisciplinastot, ativado ao ser criado um objeto Discipline
-    Discipline(){
-        Discipline.numdisciplinastot = Discipline.numdisciplinastot+1;
+    //Construtor
+    public Discipline(Integer n)
+    {
+        this.nAtiv = n;
+        atv = new PendentActivities[nAtiv];
     }
 
-    protected void setNumAtividades(Integer numatividades){
-        this.numatividades = numatividades;
-    }
+    //SETTERS
+
     protected void setHorario(Integer horario){
         this.horario = horario;
     }
@@ -27,7 +26,7 @@ class Discipline extends AgendaMain{
     protected void setNomeDisciplina(String nomedisciplina){
         this.nomedisciplina = nomedisciplina;
     }
-   
+   //GETTERS
     protected String getNomeDisciplina(){
         return nomedisciplina;
     }
@@ -37,10 +36,7 @@ class Discipline extends AgendaMain{
     protected String getProfessor(){
         return professor;
     }
-    protected Integer getNumAtividades(){
-        return numatividades;
-    }
-    protected Integer getNumDisciplinastot(){
-        return numdisciplinastot;
+    protected Integer getNAtiv(){
+        return nAtiv;
     }
 }
