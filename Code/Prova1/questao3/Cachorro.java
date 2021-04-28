@@ -12,9 +12,9 @@ public class Cachorro {
 
     public static void main(String[] args) {
 
-        String nome = null;
-        String respostadono = null;
-        String dono = null;       
+        String nome = "alex";
+        String respostadono;
+        String dono = "tem";       
         String sentimentos = "tester";
         Boolean saude = true;
         Scanner input = new Scanner(System.in);
@@ -30,18 +30,19 @@ public class Cachorro {
             System.out.println("ENTÃO VAMOS DAR UM NOME AO DOGUINHO! ");
             // while (nome == null) {     //cuidando de exceções
             //     try {
-                    nome = input.nextLine();
+                     nome = input.nextLine();
             //     } catch (InputMismatchException e) {
             //         System.out.println("PERDÃO MAS NÃO CONSEGUI COMPREENDER PODERIA DIGITAR APENAS CARACTERES?");
+            //         nome = input.nextLine();
             //     }
             // }
             pulaL();
         }
         System.out.printf("ENTÃO %s, VOCE TEM UM DONO?%n", nome);
-        if (dono == null) {
+        if (dono == null || dono == "nao tem" || dono == "n") {
             System.out.printf("HMM PARECE QUE %s NÃO TEM UM DONO NÉ... %n NESSE CASO VOCE GOSTARIA DE SER O  NOVO DONO DO %s?('s' para SIM, 'n' para NÃO)%n", nome, nome);
             respostadono = input.nextLine();
-            while (respostadono != "s" || respostadono !="n") { //erro de lógica aqui no verificador de erro do problema
+            while (respostadono != "s" && respostadono !="n") { //erro de lógica aqui no verificador de erro do problema
                 switch (respostadono) {
                 case "s":
                     System.out.println("OHH QUE LEGAL!!");
@@ -63,6 +64,8 @@ public class Cachorro {
             System.out.println("OHH QUE OTIMO ENTÃO!");
         }
         System.out.println("AGORA VAMOS VER QUAL A RAÇA DO DOG!");
+        pulaL();
+        pulaL();
         System.out.println("uma raça de cão tem muitas caracteristicas distintas, entre elas o tamanho do pelo, a cor do mesmo, o tamanho das orelhas, o tipo do crânio, o tipo do latido, alguns até mesmo uivam!");
         System.out.println("temos em nosso banco um total de 5 raças de cachorros, Pastor Alemão, Pitbull, Husky Siberiano, Pinscher e Dachshund");
         pulaL();
