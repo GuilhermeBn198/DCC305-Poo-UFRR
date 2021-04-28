@@ -70,18 +70,33 @@ public class Cachorro {
         System.out.println("temos em nosso banco um total de 5 raças de cachorros, Pastor Alemão, Pitbull, Husky Siberiano, Pinscher e Dachshund");
         pulaL();
         pulaL();
-        System.out.println("Pastor Alemão: uma raça de porte grande, com PERSONALIDADE leal, TEMPERAMENTO equilibrado, dócil e obediente. podendo ter PELAGEM curta ou longa. possui um FOCINHO do tipo mesocefálico, sua PELAGEM VARIA entre preto com marcas marrom e marrom com marcas amarelas, pode UIVAR e seu LATIDO tende a ser grosso");
+        System.out.println("Pastor Alemão: uma raça de porte grande, com personalidade leal, TEMPERAMENTO equilibrado, dócil e obediente. podendo ter PELAGEM curta ou longa. possui um FOCINHO do tipo mesocefálico, sua COR DE PELOS VARIA entre preto com marcas marrom e marrom com marcas amarelas, pode UIVAR e seu LATIDO tende a ser grosso");
         divisorAsterisco();
-        System.out.println("Pitbull: ");
+        System.out.println("Pitbull: Ao contrario da crença popular de que são animais de TEMPERAMENTO agressivo e rude, é na verdade uma raça muito generosa, legal e companheira,  de PELAGEM curta, possui um FOCINHO do tipo mesocefálico e a COR DE SEUS PELOS é bastante variada, apenas LATEM");
         divisorAsterisco();
-        System.out.println("Husky Siberiano: ");
+        System.out.println("Husky Siberiano: SÃO bastante brincalhões e acolhedores, com PELAGEM longa, possui um FOCINHO do tipo mesocefálico e a COR DE SEUS PELOS varia desde o preto até o branco puro, podem latir e uivar.");
         divisorAsterisco();
-        System.out.println("Pinscher: ");
+        System.out.println("Pinscher: uma raça de porte pequeno, podendo sere acomodado em pequenos apartametnos, tem um TEMPERAMENTO bastante excêntrico, protetor e corajoso. Sua PELAGEM é curta e tem um FOCINHO do tipo braquiocefálico(Curto), a COR DOS PELOS pode preto e castanho ou só vermelho cervo ou vermelho castanho. Pode LATIR(muuuuito).");
         divisorAsterisco();
-        System.out.println("Dachshund: ");
+        System.out.println("Dachshund: TEMPERAMENTO dócil e amigavel, FOCINHO dolicocefálico, sua PELAGEM pode ser longa ou curta. A COR DOS PELOS pode ser bastante variada e apenas latem. ");
         pulaL();
         pulaL();
-        System.out.println("sucesso temporario");
+        System.out.println("COM BASE NESSAS INFORMAÇÕES QUE FORAM PASSADAS A VOCE ACHO Q VC SABERÁ DESCREVER AS CARACTERISTICAS DO CÃO.");
+        pulaL();
+        System.out.println("descreva o focinho do cão, digitando o código relativo ao tipo\n1 para braquiocefálico\n2 para mesocefálico\n3 para dolicocefálico:");
+        raca.setFocinho(input.nextInt());
+        while (raca.getFocinho() != 1 && raca.getFocinho() != 2 && raca.getFocinho() != 3) {
+            try {
+                System.out.println("perdão amigo mas digite o código certo.");
+                raca.setFocinho(input.nextInt());
+               raca.getFocinho();
+            } catch (InputMismatchException e) {
+                System.out.println("perdão amigo mas digite o código certo.");
+               raca.setFocinho(input.nextInt());
+               raca.getFocinho();
+            }
+        }
+        
         //lógica p determinar a raça do cão
     //    while (raca.getNomeRaca() == null) {
     //        try {
