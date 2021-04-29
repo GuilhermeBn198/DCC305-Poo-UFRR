@@ -1,17 +1,21 @@
 package questao3;
 
 public class Racadocao extends Cachorro {
-    protected Integer nomeraca; //vai ser usado como validador das especies
+    protected String nomeraca; //vai ser usado como validador das especies
+    protected Integer comportamento;
     protected Integer focinho;
-    protected Boolean pelagem;
+    protected Integer pelagem;
     protected String cordopelo;
     protected String latido;
     protected String uivar;
 //declaração atributos raçadocão
-    protected void setNomeRaca(Integer nomeraca){ 
+    protected void setNomeRaca(String nomeraca){ 
         this.nomeraca = nomeraca;
     } 
-    protected void isPelagem(Boolean pelagem){
+    protected void setComportamento(Integer comportamento){ 
+        this.comportamento = comportamento;
+    } 
+    protected void setPelagem(Integer pelagem){
         this.pelagem = pelagem;
     }
     protected void setFocinho(Integer focinho){
@@ -26,10 +30,13 @@ public class Racadocao extends Cachorro {
     protected void setUivar(String uivar){
         this.uivar = uivar;
     }
-    protected Integer getNomeRaca(){
+    protected String getNomeRaca(){
         return nomeraca;
     }
-    protected Boolean getPelagem(){
+    protected Integer getComportamento(){
+        return comportamento;
+    }
+    protected Integer getPelagem(){
         return pelagem;
     }
     protected Integer getFocinho(){
