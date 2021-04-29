@@ -5,9 +5,9 @@ public class Cachorro {
 
     public static void main(String[] args) {
 
-        String nome = "alex";
+        String nome = " ";
         String respostadono;
-        String dono = "tem";       
+        String dono;       
         String saude;
         Scanner input = new Scanner(System.in);
         Racadocao raca = new Racadocao();
@@ -16,7 +16,7 @@ public class Cachorro {
         limpatela();
         System.out.println("Ola, bem vindo ao sistema de cadastro animal.%n");
         System.out.println("Seu dog tem nome?");
-        if (nome != null) {
+        if (!nome.equals(" ")) {
             System.out.printf("Que nome bonito:):):) %s%n", nome);
         } else {
             System.out.println("Parece que não... ");
@@ -26,10 +26,11 @@ public class Cachorro {
         pulaL();
 
         System.out.printf("Entao, %s, voce tem um dono?%n", nome);
-        if (dono == null || dono == "nao" || dono == "n") {
+        dono=input.nextLine();
+        if (dono == null || dono.equals("nao") || dono.equals("n")) {
             System.out.printf("Parece que nao tem dono... %n nesse caso, gostarias de ser o dono do %s?('s' para SIM, 'n' para NÃO)%n", nome, nome);
             respostadono = input.nextLine();
-            while (respostadono != "s" && respostadono !="n") { 
+            while (!respostadono.equals("s") && !respostadono.equals("n")) { 
                 switch (respostadono) {
                 case "s":
                     System.out.println("Supimpa!!");
@@ -68,16 +69,16 @@ public class Cachorro {
         divisorAsterisco();
         System.out.println("Husky Siberiano: SÃO bastante brincalhões e acolhedores, com PELAGEM longa, possui um FOCINHO do tipo mesocefálico e a COR DE SEUS PELOS varia desde o preto até o branco puro,  LATE grosso e pode UIVAR.");
         divisorAsterisco();
-        System.out.println("Pinscher: uma raça de porte pequeno, podendo sere acomodado em pequenos apartametnos, tem um TEMPERAMENTO bastante excêntrico, protetor e corajoso. Sua PELAGEM é curta e tem um FOCINHO do tipo braquiocefálico(Curto), a COR DOS PELOS pode preto e castanho ou só vermelho cervo ou vermelho castanho. LATE fino(muuuuito).");
+        System.out.println("Pinscher: uma raça de porte pequeno, podendo sere acomodado em pequenos apartamentos, tem um TEMPERAMENTO bastante excêntrico, protetor e corajoso. Sua PELAGEM é curta e tem um FOCINHO do tipo braquiocefálico(Curto), a COR DOS PELOS pode preto e castanho ou só vermelho cervo ou vermelho castanho. LATE fino(muuuuito).");
         divisorAsterisco();
         System.out.println("Dachshund: TEMPERAMENTO dócil e amigavel, FOCINHO dolicocefálico, sua PELAGEM pode ser longa ou curta. A COR DOS PELOS pode ser bastante variada e latem fino. ");
         pulaL();
         pulaL();
-        System.out.println("COM BASE NESSAS INFORMAÇÕES QUE FORAM PASSADAS A VOCE ACHO Q VC SABERÁ DESCREVER AS CARACTERISTICAS DO CÃO.");
+        System.out.println("Com base nessas informaçoes, poderia nos descrever a raça do seu cao?.");
         pulaL();
         pulaL();
 
-        System.out.println("descreva o focinho do cão, digitando o código relativo ao tipo\n1 para braquiocefálico\n2 para mesocefálico\n3 para dolicocefálico:");
+        System.out.println("Descreva o focinho do cao, digitando o codigo relativo ao tipo\n1 para braquiocefalico\n2 para mesocefalico\n3 para dolicocefAlico:");
         raca.setFocinho(input.nextInt());
         while (!raca.getFocinho().equals(1) && !raca.getFocinho().equals(2) && !raca.getFocinho().equals(3)) {
             try {
@@ -93,7 +94,7 @@ public class Cachorro {
         input.nextLine();  // consome resto da linha
 
         pulaL();
-        System.out.println("descreva agora qual o tipo de pelagem do cão, digitando o código relativo ao tipo\n1 para curto\n2 para longo:");
+        System.out.println("Descreva agora qual o tipo de pelagem do cão, digitando o codigo relativo ao tipo\n1 para curto\n2 para longo:");
         raca.setPelagem(input.nextInt());
         while (raca.getPelagem().equals(1) && raca.getPelagem().equals(2)) {
             try {
@@ -107,7 +108,7 @@ public class Cachorro {
         input.nextLine();  // Consome resto da linha
 
         pulaL();
-        System.out.printf("descreva o comportamento do animal. variando entre: %n'equilibrado, dócil e obediente' %n'generosa, legal e companheira,' %n'brincalhão e acolhedor' %n'excêntrico, protetor e corajoso' %n'dócil e amigavel' %nrespectivamente seus códigos são 1, 2, 3, 4 e 5: ");
+        System.out.printf("Descreva o comportamento do animal. variando entre: %n'equilibrado, dócil e obediente' %n'generosa, legal e companheira,' %n'brincalhão e acolhedor' %n'excêntrico, protetor e corajoso' %n'dócil e amigavel' %nrespectivamente seus códigos são 1, 2, 3, 4 e 5: ");
          raca.setComportamento(input.nextInt());
         while (!raca.getComportamento().equals(1) && !raca.getComportamento().equals(2) && !raca.getComportamento().equals(3) && !raca.getComportamento().equals(4) && !raca.getComportamento().equals(5)) {
             try {
@@ -119,7 +120,7 @@ public class Cachorro {
         }
         input.nextLine(); //consome o resto da linha anterior
         pulaL();
-        System.out.println("descreva agora qual a cor dos pelos do cão:");
+        System.out.println("Descreva agora qual a cor dos pelos do cão:");
         raca.setCorDoPelo(input.nextLine());
 
         pulaL();
@@ -155,25 +156,31 @@ public class Cachorro {
         // System.out.println(raca.getUivar());
         // raca.getLatido().equals("grosso")
 
-        //lógica p determinar a raça do cão
-        if(raca.getFocinho().equals(2) && (raca.getPelagem().equals(1) || raca.getPelagem().equals(2))  && (raca.getCorDoPelo().equals("preto com marcas marrom") || raca.getCorDoPelo().equals("marrom com marcas amarelas")) &&  (raca.getComportamento().equals(1) || raca.getComportamento().equals(5) )  && raca.getLatido().equals("grosso") && raca.getUivar().equals("s")){
+        //lógica p determinar a raça do cão //FEITO
+        if(raca.getFocinho().equals(2) && (raca.getPelagem().equals(1) || raca.getPelagem().equals(2))  && (raca.getCorDoPelo().equals("preto com marcas marrom") || raca.getCorDoPelo().equals("marrom com marcas amarelas")) &&  (raca.getComportamento().equals(1) || raca.getComportamento().equals(5) )  && raca.getLatido().equals("grosso") && raca.getUivar().equals("s"))
+        {
             raca.setNomeRaca("Pastor Alemão");
         }
-        System.out.println(raca.getNomeRaca()); //teste
-        // if () {
-            
-        //     raca.setNomeRaca("Pitbull");
-        // }
+        System.out.println(raca.getNomeRaca()); 
+         if(raca.getFocinho().equals(2) && (raca.getPelagem().equals(1)) && raca.getComportamento().equals(2)  && raca.getLatido().equals("grosso") && raca.getUivar().equals("n")) 
+        {
+            raca.setNomeRaca("Pitbull");
+        }
 
-        // if(){
-        //     raca.setNomeRaca("Husky Siberiano");
-        // }
-        // if(){
-        //     raca.setNomeRaca("Pinscher");
-        // }
-        // if(){
-        //     raca.setNomeRaca("Dachshund");
-        // }
+        if(raca.getFocinho().equals(2) && (raca.getPelagem().equals(2)) && raca.getComportamento().equals(3)  && raca.getLatido().equals("grosso") && raca.getUivar().equals("s"))
+        {
+            raca.setNomeRaca("Husky Siberiano");
+        }
+        
+        if(raca.getFocinho().equals(1) && (raca.getPelagem().equals(1) && (raca.getCorDoPelo().equals("preto e castanho") || raca.getCorDoPelo().equals("vermelho cervo")|| raca.getCorDoPelo().equals("vermelo castanho")) &&  raca.getComportamento().equals(4) && raca.getLatido().equals("fino") && raca.getUivar().equals("n")))
+        {
+            raca.setNomeRaca("Pinscher");
+        }
+
+        if(raca.getFocinho().equals(3) && (raca.getPelagem().equals(1) &&  raca.getComportamento().equals(5) && raca.getLatido().equals("fino") && raca.getUivar().equals("n")))
+        {
+             raca.setNomeRaca("Dachshund");
+         }
 
     }//fim metodo main
     
