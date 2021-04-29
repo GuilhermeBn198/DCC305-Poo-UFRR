@@ -1,5 +1,3 @@
-
-
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -17,7 +15,7 @@ public class Cachorro {
         limpatela();
         System.out.println("OLÁ BEM VINDO AO SISTEMA DE CADASTRO ANIMAL, O DOG TEM NOME?");
         if (nome != null) {
-            System.out.printf("OHH QUE NOME BONITO %s%n", nome);
+            System.out.printf("OHH QUE NOME BONITO :):):) %s%n", nome);
         } else {
             System.out.println("... pelo visto não...");
             System.out.println("ENTÃO VAMOS DAR UM NOME AO DOGUINHO! ");
@@ -51,7 +49,7 @@ public class Cachorro {
             System.out.println("OHH QUE OTIMO ENTÃO!");
         }
 
-        System.out.printf("%s está com algum ferimento?%n", nome);
+        System.out.printf("%s Está com algum ferimento?%n", nome);
         saude = input.nextLine();
         pulaL();
 

@@ -1,13 +1,12 @@
-
-
-public class Racadocao extends Cachorro {
-    protected String nomeraca; //vai ser usado como validador das especies
+public class Racadocao {
+    protected String nomeraca; //Vai ser usado como validador das especies
     protected Integer comportamento;
     protected Integer focinho;
     protected Integer pelagem;
     protected String cordopelo;
     protected String latido;
     protected String uivar;
+
 //declaração atributos raçadocão
     protected void setNomeRaca(String nomeraca){ 
         this.nomeraca = nomeraca;
