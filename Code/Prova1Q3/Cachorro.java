@@ -159,7 +159,7 @@ public class Cachorro {
         if(raca.getFocinho().equals(2) && (raca.getPelagem().equals(1) || raca.getPelagem().equals(2))  && (raca.getCorDoPelo().equals("preto com marcas marrom") || raca.getCorDoPelo().equals("marrom com marcas amarelas")) &&  (raca.getComportamento().equals(1) || raca.getComportamento().equals(5) )  && raca.getLatido().equals("grosso") && raca.getUivar().equals("s")){
             raca.setNomeRaca("Pastor Alemão");
         }
-        System.out.println(raca.getNomeRaca());
+        System.out.println(raca.getNomeRaca()); //teste
         // if () {
             
         //     raca.setNomeRaca("Pitbull");
