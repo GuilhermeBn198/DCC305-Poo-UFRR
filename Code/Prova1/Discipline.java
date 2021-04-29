@@ -1,7 +1,4 @@
-package questao1e2;
-
 class Discipline{
-    protected Object[] pendentes;
     protected Integer horario;
     protected String professor;
     protected String nomedisciplina;
@@ -39,4 +36,18 @@ class Discipline{
     protected Integer getNAtiv(){
         return nAtiv;
     }
+    protected Double somaNotas(){
+        Double sumNotes=0.0;
+        for(int k=0;k<this.nAtiv;k++){
+            sumNotes=sumNotes+this.atv[k].getNota();
+        }
+        return sumNotes;
+    }
+
+    protected Double media(){
+        Double mediaArit=0.0;
+        mediaArit=this.somaNotas()/this.nAtiv;
+        return mediaArit;
+        }
 }
+

@@ -1,5 +1,3 @@
-package questao1e2;
-
 class PendentActivities {
     
     
