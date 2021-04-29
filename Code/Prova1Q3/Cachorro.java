@@ -11,36 +11,38 @@ public class Cachorro {
         String saude;
         Scanner input = new Scanner(System.in);
         Racadocao raca = new Racadocao();
+        //VERIFICAR SE O DOG TEM NOME
         //parte impressa
         limpatela();
-        System.out.println("OLÁ BEM VINDO AO SISTEMA DE CADASTRO ANIMAL, O DOG TEM NOME?");
+        System.out.println("Ola, bem vindo ao sistema de cadastro animal.%n");
+        System.out.println("Seu dog tem nome?");
         if (nome != null) {
-            System.out.printf("OHH QUE NOME BONITO :):):) %s%n", nome);
+            System.out.printf("Que nome bonito:):):) %s%n", nome);
         } else {
-            System.out.println("... pelo visto não...");
-            System.out.println("ENTÃO VAMOS DAR UM NOME AO DOGUINHO! ");
+            System.out.println("Parece que não... ");
+            System.out.println("Entao vamos nomear o doguinho!%n");
             nome = input.nextLine();
         }
         pulaL();
 
-        System.out.printf("ENTÃO %s, VOCE TEM UM DONO?%n", nome);
-        if (dono == null || dono == "nao tem" || dono == "n") {
-            System.out.printf("HMM PARECE QUE %s NÃO TEM UM DONO NÉ... %n NESSE CASO VOCE GOSTARIA DE SER O  NOVO DONO DO %s?('s' para SIM, 'n' para NÃO)%n", nome, nome);
+        System.out.printf("Entao, %s, voce tem um dono?%n", nome);
+        if (dono == null || dono == "nao" || dono == "n") {
+            System.out.printf("Parece que nao tem dono... %n nesse caso, gostarias de ser o dono do %s?('s' para SIM, 'n' para NÃO)%n", nome, nome);
             respostadono = input.nextLine();
             while (respostadono != "s" && respostadono !="n") { 
                 switch (respostadono) {
                 case "s":
-                    System.out.println("OHH QUE LEGAL!!");
+                    System.out.println("Supimpa!!");
                     respostadono = "s";
                     dono = "tem";
                     break;
                 case "n":
-                    System.out.println("OHH TUDO BEM ENTÃO CUIDAREMOS DELE SIM!");
+                    System.out.println("Oh, ok. Entao cuidaremos dele. :)");
                     respostadono = "n";
                     dono = "não tem";
                     break;
                 default:
-                    System.out.println("!!!!por favor digite apenas 's' ou 'n' para afirmar a resposta!!!!");
+                    System.out.println("Digite apenas 's' ou 'n'!!!!");
                     respostadono = input.nextLine();
                     break;
                 }
@@ -49,15 +51,15 @@ public class Cachorro {
             System.out.println("OHH QUE OTIMO ENTÃO!");
         }
 
-        System.out.printf("%s Está com algum ferimento?%n", nome);
+        System.out.printf("%s tem algum ferimento?%n", nome);
         saude = input.nextLine();
         pulaL();
 
-        System.out.println("AGORA VAMOS VER QUAL A RAÇA DO DOG!");
+        System.out.println("Agora veremos qual e a raça do doguinho!");
         pulaL();
         pulaL();
-        System.out.println("uma raça de cão tem muitas caracteristicas distintas, entre elas o tamanho do pelo, a cor do mesmo, o tipo do crânio, o tipo do latido, alguns até mesmo uivam!");
-        System.out.println("temos em nosso banco um total de 5 raças de cachorros, Pastor Alemão, Pitbull, Husky Siberiano, Pinscher e Dachshund");
+        System.out.println("Uma raça de cão tem muitas caracteristicas distintas, entre elas o tamanho e cor do pelo, o tipo do crânio, o tipo do latido, alguns até mesmo uivam!");
+        System.out.println("Temos em nosso banco um total de 5 raças de cachorros: Pastor Alemao, Pitbull, Husky Siberiano, Pinscher e Dachshund");
         pulaL();
         pulaL();
         System.out.println("Pastor Alemão: uma raça de porte grande, com personalidade leal, TEMPERAMENTO equilibrado, dócil e obediente. podendo ter PELAGEM curta ou longa. possui um FOCINHO do tipo mesocefálico, sua COR DE PELOS VARIA entre preto com marcas marrom e marrom com marcas amarelas, pode UIVAR e seu LATIDO tende a ser grosso");
@@ -181,7 +183,7 @@ public class Cachorro {
 
     public static void limpatela(){
         for (int i = 0; i < 50; i++) {
-            System.out.println("");
+            pulaL();
         }
     }
     public static void pulaL(){
