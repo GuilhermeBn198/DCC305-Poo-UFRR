@@ -1,7 +1,7 @@
 public class DogActions extends Racadocao{
 
     String nomeDog;             //Nome do doguinho
-    //STATUS BINÁRIOS
+    //STATUS BINARIOS
     boolean isAwake=true;       //Acordado
     boolean isTired=false;      //Cansado
     boolean lostOneFeet=false;  //Perdeu uma pata
@@ -14,7 +14,7 @@ public class DogActions extends Racadocao{
         this.nomeDog=name;
     }
 
-    //Status não binários
+    //Status não binarios
     Integer hunger =0; //Sem fome->Faminto
     Integer energy=10;  //Cansado->Descansado
     Integer bladder=0; //Bexiga vazia-> bexiga cheia
@@ -86,6 +86,7 @@ public class DogActions extends Racadocao{
         else {
             System.out.println("Seu cachorro se recuperou do acidente e esta melhor :)");
             isRecovering=false;
+        }
     }
     
     void addFood(Integer food){
@@ -94,7 +95,7 @@ public class DogActions extends Racadocao{
             hunger=0;
     }
 
-    void removerstatus(Integer )
+    //void removerstatus()
     // void poo(){
     //     System.out.println("O dog está realizando as suas necessidades, olhe para o lado.");
     // }

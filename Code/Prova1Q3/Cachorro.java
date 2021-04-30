@@ -354,7 +354,7 @@ public class Cachorro {
 
 
          DogActions dogeA = new DogActions(nome);
-         System.out.printf("Status atual do %s", nome);
+         System.out.printf("Status atual do %s%n", nome);
          dogeA.showStats();
 
          input.close();
