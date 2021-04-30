@@ -41,30 +41,23 @@ public class DogActions extends Racadocao{
     }
     void run(){
         System.out.println("Como o vento, seu cachorro corre velozmente!");
-        this.energy -= 4;
-        this.humour += 4;
-        this.hunger += 3;
+        this.minusEnergy(4);
+        this.plusHumour(4);
+        this.plusHunger(3);
     }
     void takeAWalk(){
         System.out.println("Hoje é dia de passear :3");
-        this.energy -= 1;
-        this.humour += 2;
-        this.hunger += 1;
+        this.minusEnergy(1);;
+        this.plusHumour(2);
+        this.plusHunger(1);
     }
     void eat(){
             System.out.println("a refeicao esta servida!\n");
-            this.hunger -= 6;
-            this.humour += 1;
+            this.minusHunger(6);;
+            this.plusHumour(1);;
         }
     void sleep(){
-        if (this.energy <= 10 && this.energy > 5) {
-            this.energy = 10;
-            System.out.println("O cachorro está 100% descansado e pronto para mais aventuras!\n");
-        } else{
-            this.energy =this.energy + 5;
-            System.out.println("O cachorro recuperou parte de sua energia :)\n");
-        }
-        System.out.println("auau");
+        this.plusEnergy(10);
     }
     void accident(){
         System.out.println("Oh, nao! Seu dog sofreu um acidente\n");
@@ -88,19 +81,46 @@ public class DogActions extends Racadocao{
         }
     }
     
-    void addFood(Integer food){
-        hunger -= food;
+    void minusHunger(Integer x){
+        hunger -= x;
         if(hunger < 0)
             hunger = 0;
     }
-    //hunger+
-    //hunger-
-    //energy+
-    //energy-
-    //bladder+
-    //bladder-
-    //humour+
-    //humour-
+    void plusHunger(Integer x){
+        hunger += x;
+        if(hunger > 10)
+            hunger = 10;
+    }
+    void plusEnergy(Integer x){
+        energy += x;
+        if(energy > 10)
+            energy = 10;
+    }
+    void minusEnergy(Integer x){
+        energy -= x;
+        if(energy < 0)
+            energy = 0;
+    }
+    void plusBladder(Integer x){
+        bladder += x;
+        if(bladder > 10)
+            bladder = 10;
+    }
+    void minusBladder(Integer x){
+        bladder -= x;
+        if(bladder < 0)
+            bladder = 0;
+    }
+    void plusHumour(Integer x){
+        humour+=x;
+        if (humour > 10)
+            humour = 10;
+    }
+    void minusHumour(Integer x){
+        humour-=x;
+        if (humour < 0)
+            humour = 0;
+    }
 
     //void removerstatus()
 

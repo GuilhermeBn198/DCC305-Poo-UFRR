@@ -358,6 +358,11 @@ public class Cachorro {
          DogActions dogeA = new DogActions(nome);
          System.out.printf("Status atual do %s%n", nome);
             dogeA.showStats();
+            dogeA.run();
+            dogeA.showStats();
+            dogeA.run();
+            dogeA.run();
+            dogeA.showStats();
 
          input.close();
     }//fim metodo main
