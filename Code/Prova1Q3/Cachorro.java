@@ -4,8 +4,8 @@ import java.util.InputMismatchException;
 public class Cachorro { 
 
     public static void main(String[] args) {
-        int condWhileInterno= 0;
-        int condWhileExterno=0;
+        int condWhileInterno = 0;
+        int condWhileExterno = 0;
         String nome = " ";       //Nome do Dog
         String respostadono;     //Guarda "s" o"n" pra definir se o dono quer cuidar do dog
         String dono;             //Guarda "s" o"n" pra definir se o Dog tem dono
@@ -30,7 +30,7 @@ public class Cachorro {
         if (!nome.equals(" ")) {
             System.out.printf("%s... que nome bonito :)%n", nome);
         } else {
-            System.out.printf("Parece que nao...%n Entao vamos nomear o doguinho!%n ");
+            System.out.printf("Parece que nao...%n Entao vamos nomear o doguinho!%n");
             nome = input.nextLine();
         }
         pulaL();             //100% WORKING
@@ -357,7 +357,7 @@ public class Cachorro {
 
          DogActions dogeA = new DogActions(nome);
          System.out.printf("Status atual do %s%n", nome);
-         dogeA.showStats();
+            dogeA.showStats();
 
          input.close();
     }//fim metodo main
