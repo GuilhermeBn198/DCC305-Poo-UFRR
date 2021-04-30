@@ -3,7 +3,7 @@ public class Racadocao {
     protected Integer comportamento;
     protected Integer focinho;
     protected Integer pelagem;
-    protected String cordopelo;
+    protected Integer cordopelo;
     protected String latido;
     protected String uivar;
 
@@ -20,7 +20,7 @@ public class Racadocao {
     protected void setFocinho(Integer focinho){
         this.focinho = focinho;
     }
-    protected void setCorDoPelo(String cordopelo){
+    protected void setCorDoPelo(Integer cordopelo){
         this.cordopelo = cordopelo;
     }
     protected void setLatido(String latido){
@@ -41,7 +41,7 @@ public class Racadocao {
     protected Integer getFocinho(){
         return focinho;
     }
-    protected String getCorDoPelo(){
+    protected Integer getCorDoPelo(){
         return cordopelo;
     }
     protected String getLatido(){
@@ -51,5 +51,4 @@ public class Racadocao {
         return uivar;
     }
 
-
-}
+}//End class
