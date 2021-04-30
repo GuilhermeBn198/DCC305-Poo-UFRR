@@ -4,7 +4,8 @@ import java.util.InputMismatchException;
 public class Cachorro { 
 
     public static void main(String[] args) {
-        int checkT= 0;
+        int condWhileInterno= 0;
+        int condWhileExterno=0;
         String nome = " ";       //Nome do Dog
         String respostadono;     //Guarda "s" o"n" pra definir se o dono quer cuidar do dog
         String dono;             //Guarda "s" o"n" pra definir se o Dog tem dono
@@ -38,11 +39,13 @@ public class Cachorro {
         guardadono = "n";
         System.out.printf("Entao, %s, voce tem um dono?('s' para SIM, 'n' para NAO) %n", nome);
         dono=input.nextLine();
-        do {
+
+        while(condWhileExterno==0) {
             switch (dono) {
                 case "s":
                     System.out.println("Muito boom, otimo");
                     pulaL();
+                    condWhileExterno=1;
                     break;
 
                 case "n":
@@ -54,29 +57,28 @@ public class Cachorro {
                                  System.out.println("OHH QUE COISA BOA");
                                  dono = "s";
                                  guardadono = "s";
-                                 checkT=1;
+                                 condWhileInterno=1;
+                                 condWhileExterno=1;
                                  break;
                              case "n":
-                                System.out.println("tudo bem então.......");
+                                System.out.println("Tudo bem então.......");
                                 dono = "s";
                                 guardadono = "n";
-                                checkT=1;
+                                condWhileInterno=1;
+                                condWhileExterno=1;
                                 break;
 
                              default:
                                tratexcept();//Erro do do while interno
                                 respostadono = input.nextLine();
-                                break;
                                 }
-                     } while (checkT==0);
-                    break;
-
+                     } while (condWhileInterno==0);
+                     break;
                 default:
                     tratexcept(); //Erro no do while externo
                     dono = input.nextLine();
-                    continue;
-            } while (!dono.equals("s") && !dono.equals("n"));
-} while(!dono.equals("s")  && !dono.equals("n"));
+                }
+}
         
         //pega ferimento
         System.out.printf("%s Tem algum ferimento?%n", nome);
