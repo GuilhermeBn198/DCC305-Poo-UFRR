@@ -13,10 +13,10 @@ public class Cachorro {
         String saude;            //Nº feridas do Dog
         String terminaAplicacao; //String para finalizar a aplicação
 
-        String trueFocinho;
-        String truePelagem;
-        String trueCorDoPelo;
-        String trueComportamento;
+        String trueFocinho; //obtido no final do código
+        String truePelagem;  //obtido no final do código
+        String trueCorDoPelo; //obtido no final do código
+        String trueComportamento; //obtido no final do código
 
         Scanner input = new Scanner(System.in);
         Racadocao raca = new Racadocao();
@@ -365,7 +365,6 @@ public class Cachorro {
     private static void tratexcept() {
         System.out.println("Perdão amigo mas digite o código certo.");
     }
-
     public static void limpatela(){
         for (int i = 0; i < 50; i++) {
             pulaL();
