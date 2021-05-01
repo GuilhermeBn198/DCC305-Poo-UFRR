@@ -4,7 +4,7 @@ public class DogActions extends Racadocao{
     //STATUS BINARIOS
     //boolean isAwake=true;       //Acordado
     boolean isTired=false;      //Cansado
-    boolean lostOneFeet=false;  //Perdeu uma pata
+    boolean lostOneFeet=false;  //Perdeu uma pata //N USADO
     boolean isRecovering=false; //Recuperando-se
     boolean isSick=false;       //Doente
 
@@ -14,10 +14,10 @@ public class DogActions extends Racadocao{
     }
 
     //Status não binarios
-    Integer hunger =0; //Sem fome->Faminto
-    Integer energy=10;  //Cansado->Descansado
-    Integer bladder=0; //Bexiga vazia-> bexiga cheia
-    Integer humour=10;  //Triste->Feliz
+    Integer hunger = 0; //Sem fome->Faminto
+    Integer energy = 10;  //Cansado->Descansado
+    Integer bladder = 0; //Bexiga vazia-> bexiga cheia
+    Integer humour = 10;  //Triste->Feliz
 
     void showStats(){
         //Mostrar status do doguinho
@@ -73,7 +73,7 @@ public class DogActions extends Racadocao{
         this.minusHunger(7);
         this.plusHumour(2);
         this.plusBladder(4);
-        }
+    }
     void sleep(){
         this.plusEnergy(6);
         if(energy==10)
@@ -97,28 +97,27 @@ public class DogActions extends Racadocao{
         System.out.println("Oh, nao! Seu dog sofreu um acidente\n");
         this.humour = 2;
         this.energy = 2;
-        isTired=true;
+        checkTired();
         isRecovering = true;
-        System.out.println("Para que seu cachorro se recupere, cuide dele e deixe a fome abaixo de 2 e a energia acima de 8");
+        System.out.println("Para que seu cachorro se recupere, cuide dele e deixe a fome abaixo de 3 e a energia acima de 7");
     }
     void becomeSick(){
         if(!isSick){
         System.out.println("Seu cachorro adoeceu. Para melhorar, alimente-o e brinque com ele"); 
-        this.energy=2;
-        this.hunger=10;
-        this.humour=2;
+        this.energy = 2;
+        this.hunger = 10;
+        this.humour = 2;
         isSick=true;
         }
         //Se o dog já estiver doente, o métoo não faz nada
     }
-    
     void latir(){
         System.out.println("Au Au Au Au Au");
     }
     //METODOS DE CONTROLE
     void recuperar() {              //Se recuperar de acidentes
         if(isRecovering){
-        if (energy <= 8 || hunger  >= 2)
+        if (energy <= 7 || hunger  >= 3)
             System.out.println("Seu cachorro ainda não tem os status suficientes para se recuperar.\n");
         else {
             System.out.println("Seu cachorro se recuperou do acidente e esta melhor :)\n");
@@ -131,7 +130,7 @@ public class DogActions extends Racadocao{
      }//End recuperar()
     void curar() {              //Se recuperar de acidentes
         if(isSick){
-        if (energy <= 7 || hunger  >= 2)
+        if (energy <= 7 || hunger  >= 3)
             System.out.println("Seu cachorro ainda não tem os status suficientes para se curar.\n");
         else {
             System.out.println("Seu cachorro está curado)\n");
@@ -143,10 +142,10 @@ public class DogActions extends Racadocao{
         }
      }//End recuperar()
      void checkTired(){
-         if (energy<3)
-            isTired=true;
+         if (energy < 3)
+            isTired = true;
             else
-            isTired=false;
+            isTired = false;
      }
 
     //METODOS PRA ADD OU SUB ALGUM STATUS
@@ -181,12 +180,12 @@ public class DogActions extends Racadocao{
             bladder = 0;
     }
     void plusHumour(Integer x){
-        humour+=x;
+        humour += x;
         if (humour > 10)
             humour = 10;
     }
     void minusHumour(Integer x){
-        humour-=x;
+        humour -= x;
         if (humour < 0)
             humour = 0;
     }
