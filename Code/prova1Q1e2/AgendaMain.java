@@ -16,13 +16,13 @@ public class AgendaMain {
 		// Scanner
 		Scanner input = new Scanner(System.in);
 
-		// início do código
+		//Início do código
 		System.out.println("Olá, bem vindo à agenda, digite seu nome.");
 		nome = input.nextLine(); // Ler nome
 		pulaL();
 
 		System.out.println("Agora, informe o seu curso.");
-		curso = input.nextLine(); // Ler curso
+		curso = input.nextLine();
 		pulaL();
 
 		System.out.println("Ótimo, agora identifique o seu periodo(semestre) do curso.");
