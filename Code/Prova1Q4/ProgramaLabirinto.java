@@ -14,19 +14,23 @@ public class ProgramaLabirinto {
 
     //MÉTODO MAIN
     public static void main(String[]args){
-        mostrarLabirinto();                             //Exibe o labirinto 
-        Passo rat1 = new Passo("1", 700,'a');           //Cria rato 1
-        Passo rat2 = new Passo("2", 700,'b');           //rato 2
-        Passo rat3 = new Passo("3", 700,'c');           //rato 3
-        
-        //INFORMA OS RATOS QUE SAIRAM
-        if(rat1.getIsFree())
-            System.out.printf("%s chegou ao final.", rat1.nome);
-        if(rat1.getIsFree())
-            System.out.printf("%s chegou ao final.", rat2.nome);
-        if(rat1.getIsFree())
-            System.out.printf("%s chegou ao final.", rat3.nome);
-        
+        mostrarLabirinto(); //Exibe o labirinto 
+        Passo rat1 = new Passo("Rato 1"); //Cria thread do rato, passa o nome e o mapa
+        //Passo rat2 = new Passo("Rato 2", 1000);//2 rato
+        //Passo rat3 = new Passo("Rato 3", 1000);//3 rato
+        //baixo cima esq direita
+        rat1.setInicio();
+        rat1.printarLabirinto();
+        rat1.step(1);
+        rat1.printarLabirinto();
+
+        for (int i=0;i<10000;i++){
+            System.out.printf("%d%n%n%n%n%n",i);
+            rat1.step(1);
+            rat1.printarLabirinto();
+            if(rat1.getIsFree())
+                break;
+        }
     }//Fim main
 
     //Printar labirinto original
