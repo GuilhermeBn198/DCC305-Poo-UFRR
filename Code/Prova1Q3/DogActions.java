@@ -1,10 +1,8 @@
 public class DogActions extends Racadocao{
 
     String nomeDog;             //Nome do doguinho
-    //STATUS BINARIOS
-    //boolean isAwake=true;       //Acordado
+    //Flags
     boolean isTired=false;      //Cansado
-    boolean lostOneFeet=false;  //Perdeu uma pata //N USADO
     boolean isRecovering=false; //Recuperando-se
     boolean isSick=false;       //Doente
 
@@ -14,10 +12,10 @@ public class DogActions extends Racadocao{
     }
 
     //Status não binarios
-    Integer hunger = 0; //Sem fome->Faminto
-    Integer energy = 10;  //Cansado->Descansado
-    Integer bladder = 0; //Bexiga vazia-> bexiga cheia
-    Integer humour = 10;  //Triste->Feliz
+    Integer hunger = 0;     //Sem fome->Faminto
+    Integer energy = 10;    //Cansado->Descansado
+    Integer bladder = 0;    //Bexiga vazia-> bexiga cheia
+    Integer humour = 10;    //Triste->Feliz
 
     void showStats(){
         //Mostrar status do doguinho

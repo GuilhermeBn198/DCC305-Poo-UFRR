@@ -1,15 +1,22 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
-
+/*Questão 3 
+Feita por Guilherme Bernardo e Paulo César Pereira Belmont
+D
+*/
 public class Cachorro { 
 
     public static void main(String[] args) {
-        int condWhileInterno = 0;
-        int condWhileExterno = 0;
-        String nome = " ";       //Nome do Dog
-        String respostadono;     //Guarda "s" o"n" pra definir se o dono quer cuidar do dog
-        String dono;             //Guarda "s" o"n" pra definir se o Dog tem dono
-        String guardadono;       //Guarda "s" ou "n" definitivamente para saber se o Dog tem dono ou não
+
+        //Flags pra controle de casos
+        boolean sairDWInterno=false;    //Sair do Do While ou Do While aninhado
+        boolean sairDWExterno=false;    //Sair do Do While Externo
+        
+        String temNome;          //Flag que aponta se o cachorro tem nome
+        String nome=" ";         //Nome do Dog
+        String respostadono;     //Flag que define se o usuário quer ser o dono do dog, caso dono=false;
+        String dono;             //Flag que define que o cachorro tem dono
+        String guardadono;       //Flag que define que o cachorro irá ter um dono apos ser constatado que ele não tem dono
         String saude;            //Nº feridas do Dog
         String terminaAplicacao; //String para finalizar a aplicação
 
@@ -27,12 +34,30 @@ public class Cachorro {
         //Nome do Dog
         System.out.printf("Ola, bem vindo ao sistema de cadastro animal.%n");
         System.out.printf("O dog tem nome? %n");
-        if (!nome.equals(" ")) {
-            System.out.printf("%s... que nome bonito :)%n", nome);
-        } else {
-            System.out.printf("Parece que nao...%n Entao vamos nomear o doguinho!%n");
-            nome = input.nextLine();
-        }
+        temNome=input.nextLine();
+
+        do {        //Recebe o nome
+            switch (temNome) { 
+                case "s":
+                    System.out.println("Que legal! E qual seria o nome do dog?");
+                    nome=input.nextLine();
+                    System.out.printf("%s... que nome bonito :)%n", nome);
+                    sairDWInterno=true;
+                    break;
+                case "n":
+                    System.out.printf("Parece que nao...%n Entao vamos nomear o doguinho!%n");
+                    nome = input.nextLine();
+                    System.out.printf("%s... que nome bonito :)%n", nome);
+                    sairDWInterno=true;
+                   break;
+
+                default:
+                  tratexcept();
+                   temNome = input.nextLine();
+                   }
+        } while (sairDWInterno==false);
+
+        sairDWInterno=false;    //Reseta a flag pro proximo DoWhile (DW)
         pulaL();             //100% WORKING
 
         //Pega Dono
@@ -40,12 +65,12 @@ public class Cachorro {
         System.out.printf("Entao, %s, voce tem um dono?('s' para SIM, 'n' para NAO) %n", nome);
         dono=input.nextLine();
 
-        while(condWhileExterno==0) {
+        while(sairDWExterno==false) {
             switch (dono) {
                 case "s":
                     System.out.println("Muito boom, otimo");
                     pulaL();
-                    condWhileExterno=1;
+                    sairDWExterno=true;
                     break;
 
                 case "n":
@@ -54,28 +79,26 @@ public class Cachorro {
                      do {
                          switch (respostadono) { 
                              case "s":
-                                 System.out.println("OHH QUE COISA BOA");
-                                 dono = "s";
+                                 System.out.println("Supimpa!!!");
                                  guardadono = "s";
-                                 condWhileInterno=1;
-                                 condWhileExterno=1;
+                                 sairDWInterno=true;
+                                 sairDWExterno=true;
                                  break;
                              case "n":
                                 System.out.println("Tudo bem então.......");
-                                dono = "s";
                                 guardadono = "n";
-                                condWhileInterno=1;
-                                condWhileExterno=1;
+                                sairDWInterno=true;
+                                sairDWExterno=true;
                                 break;
 
                              default:
-                               tratexcept();//Erro do do while interno
+                               tratexcept();
                                 respostadono = input.nextLine();
                                 }
-                     } while (condWhileInterno==0);
+                     } while (sairDWInterno==false);
                      break;
                 default:
-                    tratexcept(); //Erro no do while externo
+                    tratexcept();
                     dono = input.nextLine();
                 }
 }
