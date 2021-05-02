@@ -1,8 +1,23 @@
+<<<<<<< Updated upstream
 public class Passo extends Thread { // Classe que extende Thread pra se comportar como uma
     String nome; // Atribbuto nome
     boolean isFree = false; // Atributo estáLivre
     char[][] labirintow; // Labirinto como atributo
     int tempoPausado;
+=======
+import java.util.Random;
+public class Passo extends Thread{  //Classe que extende Thread pra se comportar como uma
+    Random randGen = new Random();  //Instancia um obj usado pra gerar num entre 0 e 3
+    String nome;           //Atribbuto nome
+    boolean isFree=false;   //Atributo estáLivre
+    int tempoPausado=1000;       //Tempo utilizado para sleep(?)
+    Integer yRato=1;      //Linha atual
+    Integer xRato=1;      //Colna atual
+    Integer yRatoAnt=1;   //Linha anterior
+    Integer xRatoAnt=1;   //Coluna anterior
+    Integer decision=0;   //Utilizado pra decidir o caminho
+    
+>>>>>>> Stashed changes
 
     /*
      * TALVEZ SEJA MELHOR CRIAR UM STATIC Q INCREMENTA NO CONSTRUTOR PRA ACRIAR X
@@ -36,11 +51,45 @@ public class Passo extends Thread { // Classe que extende Thread pra se comporta
         this.labirintow = labirintow;
         start(); // ESSE COMANDO JA STARTA A THREAD AO CRIAR O RATO (AXO Q VO MUDAR)
     }
+<<<<<<< Updated upstream
 
     // A THREAD PROPRIAMENTE DITA
     public void run() {
         System.out.printf("O rato se chama %s%n", nome);
         printarLabirintow();
+=======
+    if (labirintoRato[yR][xR]=='S'){
+        yRatoAnt=yRato;     
+        xRatoAnt=xRato;
+        labirintoRato[yRatoAnt][xRatoAnt]='@';
+
+        labirintoRato[yR][xR]='W';
+
+        yRato=yR;
+        xRato=xR;
+        isFree=true;
+    }
+}
+
+public void step(Integer decisao){
+    decision= randGen.nextInt(4);   //gera um numero aleatorio de 0 a 3 e associa a decision
+    System.out.printf("%d",decision);
+    switch(decision) {
+        case 0:     //CIMA
+                setPosition((yRato-1), (xRato));
+                
+                break;  
+        case 1:     //BAIXO
+                //checkWall();
+                setPosition((yRato+1), (xRato));
+                break;
+        case 2:    //ESQUERDA
+                //checkWall();
+                setPosition((yRato), (xRato-1));
+                break;
+        case 3:    //DIREITA
+                setPosition((yRato), (xRato+1));
+>>>>>>> Stashed changes
     }
 
     // Printador de labirinto
@@ -53,9 +102,17 @@ public class Passo extends Thread { // Classe que extende Thread pra se comporta
                 System.out.println("");
                 sleep(tempoPausado); // DA 2 segundos de pausa pra thread relaxar aí
             }
+<<<<<<< Updated upstream
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }// Fim printarLabirintow
 
 }// Fim classe
+=======
+    }//Fim printarLabirintow
+    public boolean getIsFree(){
+        return isFree;
+    }
+}//Fim classe
+>>>>>>> Stashed changes
