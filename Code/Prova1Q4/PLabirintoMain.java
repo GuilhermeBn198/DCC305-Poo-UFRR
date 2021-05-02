@@ -1,5 +1,4 @@
-import java.util.Scanner;
-public class ProgramaLabirinto {
+public class PLabirintoMain {
     static char[][] labirintor = { 
     {'*','E','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'}, 
     {'*','@','*','@','@','@','@','@','*','@','@','@','@','@','@','@','@','@','@','@','@','*','@','@','@','@','@','@','@','@','@','@','*'},
@@ -15,24 +14,24 @@ public class ProgramaLabirinto {
     //MÉTODO MAIN
     public static void main(String[]args){
         mostrarLabirinto();                             //Exibe o labirinto 
-        Passo rat1 = new Passo("1", 700,'a');           //Cria rato 1
-        Passo rat2 = new Passo("2", 700,'b');           //rato 2
-        Passo rat3 = new Passo("3", 700,'c');           //rato 3
+        Passo rat1 = new Passo("1", 700, 'a');           //Cria rato 1
+        Passo rat2 = new Passo("2", 700, 'b');           //rato 2
+        Passo rat3 = new Passo("3", 700, 'c');           //rato 3
         
         //INFORMA OS RATOS QUE SAIRAM
         if(rat1.getIsFree())
             System.out.printf("%s chegou ao final.", rat1.nome);
         if(rat1.getIsFree())
-            System.out.printf("%s chegou ao final.", rat2.nome);
+            System.out.printf("%s chegou ao final!", rat2.nome);
         if(rat1.getIsFree())
-            System.out.printf("%s chegou ao final.", rat3.nome);
+            System.out.printf("%s chegou ao final!!", rat3.nome);
         
     }//Fim main
 
     //Printar labirinto original
     public static void mostrarLabirinto(){
-        for (int i=0;i<9;i++){
-            for(int j=0;j<33;j++){
+        for (int i = 0; i < 9; i++){
+            for(int j = 0; j < 33; j++){
                 System.out.printf("%c",labirintor[i][j]);
             }
             System.out.println("");

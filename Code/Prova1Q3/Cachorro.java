@@ -23,7 +23,8 @@ public class Cachorro {
 
         // Limpa a tela (kind of)
         limpatela();
-
+        System.out.println("por favor leia o readme.txt dentro do arquivo antes de executar o app cachorro.");
+        pulaL();
         // Nome do Dog
         System.out.printf("Ola, bem vindo ao sistema de cadastro animal.%n");
         System.out.printf("O dog tem nome? %n");
@@ -121,7 +122,8 @@ public class Cachorro {
         // pega focinho
         System.out.println(
                 "Descreva o focinho do cao, digitando o codigo relativo ao tipo\n1 para braquiocefalico\n2 para mesocefalico\n3 para dolicocefAlico:");
-        raca.setFocinho(input.nextInt()); input.nextLine();// define o código de focinho e consome o resto da linha
+        raca.setFocinho(input.nextInt());
+        input.nextLine();// define o código de focinho e consome o resto da linha
         while (!raca.getFocinho().equals(1) && !raca.getFocinho().equals(2) && !raca.getFocinho().equals(3)) {
             try {
                 tratexcept();
@@ -138,7 +140,8 @@ public class Cachorro {
         pulaL();
         System.out.println(
                 "Descreva agora qual o tipo de pelagem do cão, digitando o codigo relativo ao tipo\n1 para curto\n2 para longo:");
-        raca.setPelagem(input.nextInt()); input.nextLine();// define o código de pelagem e consome o resto da linha
+        raca.setPelagem(input.nextInt());
+        input.nextLine();// define o código de pelagem e consome o resto da linha
         while (raca.getPelagem().equals(1) && raca.getPelagem().equals(2)) {
             try {
                 tratexcept();
@@ -155,7 +158,8 @@ public class Cachorro {
         pulaL();
         System.out.printf(
                 "Descreva o comportamento do animal. variando entre: %n'equilibrado, dócil e obediente' %n'generosa, legal e companheira,' %n'brincalhão e acolhedor' %n'excêntrico, protetor e corajoso' %n'dócil e amigavel' %nrespectivamente seus códigos são 1, 2, 3, 4 e 5: ");
-        raca.setComportamento(input.nextInt()); input.nextLine(); // define o código de comportamento e consome o resto da linha
+        raca.setComportamento(input.nextInt());
+        input.nextLine(); // define o código de comportamento e consome o resto da linha
         while (!raca.getComportamento().equals(1) && !raca.getComportamento().equals(2)
                 && !raca.getComportamento().equals(3) && !raca.getComportamento().equals(4)
                 && !raca.getComportamento().equals(5)) {
@@ -164,7 +168,8 @@ public class Cachorro {
                 input.nextLine();
             } catch (InputMismatchException e) {
                 tratexcept();
-                raca.setComportamento(input.nextInt()); input.nextLine();
+                raca.setComportamento(input.nextInt());
+                input.nextLine();
             }
         }
 

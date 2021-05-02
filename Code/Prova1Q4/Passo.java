@@ -1,5 +1,4 @@
 import java.util.Random;
-
 //criar run()
 public class Passo implements Runnable {
 
@@ -100,13 +99,16 @@ public class Passo implements Runnable {
             case 3: // DIREITA
                 System.out.printf("%s tentou andar pra direita%n", nome);
                 setPosition((yRato), (xRato + 1));
+                break;
+            default:
+                break;
         }
     }
 
     public void trySolve() {
         setInicio();
         try {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 10000; i++) {
                 if (this.getIsFree()) {
                     isFreeFinally=true;
                     System.out.printf("Parabéns, o rato %s chegou no final do labirinto.", nome);

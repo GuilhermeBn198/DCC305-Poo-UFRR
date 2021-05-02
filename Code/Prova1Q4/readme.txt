@@ -2,7 +2,7 @@
     TALVEZ SEJA MELHOR CRIAR UM STATIC Q INCREMENTA NO CONSTRUTOR PRA 
     ACRIAR X INDICES DE VETOR DE CHAR
     
-    GUILHERME, LEIA ISSO KKKKKKKKKK
+    GUILHERME, LEIA ISSO KKKKKKKKKK -hmm
 
     O main cria os objetos dessa classe, q vai se comportar 
     como thread por herdar Thread, a classe Thread já é default do java.lang, ent n precisa import
