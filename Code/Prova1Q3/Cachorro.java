@@ -90,6 +90,7 @@ public class Cachorro {
         System.out.println("Agora veremos qual e a raça do doguinho!");
         pulaL();
         pulaL();
+
         // dá infos sobre as raças!
         System.out.println(
                 "Uma raça de cão tem muitas caracteristicas distintas, entre elas o tamanho e cor do pelo, o tipo do crânio, o tipo do latido, alguns até mesmo uivam!");
@@ -120,58 +121,59 @@ public class Cachorro {
         // pega focinho
         System.out.println(
                 "Descreva o focinho do cao, digitando o codigo relativo ao tipo\n1 para braquiocefalico\n2 para mesocefalico\n3 para dolicocefAlico:");
-        raca.setFocinho(input.nextInt());
+        raca.setFocinho(input.nextInt()); input.nextLine();// define o código de focinho e consome o resto da linha
         while (!raca.getFocinho().equals(1) && !raca.getFocinho().equals(2) && !raca.getFocinho().equals(3)) {
             try {
                 tratexcept();
                 raca.setFocinho(input.nextInt());
-                raca.getFocinho();
+                input.nextLine();
             } catch (InputMismatchException e) {
                 tratexcept();
                 raca.setFocinho(input.nextInt());
-                raca.getFocinho();
+                input.nextLine();
             }
         }
-        input.nextLine(); // consome resto da linha
 
         // pega o tipo de pelagem
         pulaL();
         System.out.println(
                 "Descreva agora qual o tipo de pelagem do cão, digitando o codigo relativo ao tipo\n1 para curto\n2 para longo:");
-        raca.setPelagem(input.nextInt());
+        raca.setPelagem(input.nextInt()); input.nextLine();// define o código de pelagem e consome o resto da linha
         while (raca.getPelagem().equals(1) && raca.getPelagem().equals(2)) {
             try {
                 tratexcept();
                 raca.setPelagem(input.nextInt());
-            } catch (Exception e) {
+                input.nextLine();
+            } catch (InputMismatchException e) {
                 tratexcept();
                 raca.setPelagem(input.nextInt());
+                input.nextLine();
             }
         }
-        input.nextLine(); // Consome resto da linha
 
         // pega o comportamento
         pulaL();
         System.out.printf(
                 "Descreva o comportamento do animal. variando entre: %n'equilibrado, dócil e obediente' %n'generosa, legal e companheira,' %n'brincalhão e acolhedor' %n'excêntrico, protetor e corajoso' %n'dócil e amigavel' %nrespectivamente seus códigos são 1, 2, 3, 4 e 5: ");
-        raca.setComportamento(input.nextInt());
+        raca.setComportamento(input.nextInt()); input.nextLine(); // define o código de comportamento e consome o resto da linha
         while (!raca.getComportamento().equals(1) && !raca.getComportamento().equals(2)
                 && !raca.getComportamento().equals(3) && !raca.getComportamento().equals(4)
                 && !raca.getComportamento().equals(5)) {
             try {
                 raca.setComportamento(input.nextInt());
-            } catch (Exception e) {
+                input.nextLine();
+            } catch (InputMismatchException e) {
                 tratexcept();
-                raca.setComportamento(input.nextInt());
+                raca.setComportamento(input.nextInt()); input.nextLine();
             }
         }
-        input.nextLine(); // consome o resto da linha anterior
 
         // Pega a cor dos pelos
         pulaL();
         System.out.printf(
                 "Descreva agora qual a cor dos pelos do cão: %n1 para preto com marcas marrom%n2 para marrom com marcas amarelas%n3 para variada%n4 para preto%n5 para vermelho%n6 para branco puro%n7 para vermelho cervo%n8 para vermelho castanho %n");
         raca.setCorDoPelo(input.nextInt());
+        input.nextLine(); // define o código de cor do pelo e consome o resto da linha
         while (!raca.getCorDoPelo().equals(1) && !raca.getCorDoPelo().equals(2) && !raca.getCorDoPelo().equals(3)
                 && !raca.getCorDoPelo().equals(4) && !raca.getCorDoPelo().equals(5) && !raca.getCorDoPelo().equals(6)
                 && !raca.getCorDoPelo().equals(7) && !raca.getCorDoPelo().equals(8)) {
@@ -209,6 +211,7 @@ public class Cachorro {
                 default:
                     tratexcept();
                     raca.setCorDoPelo(input.nextInt());
+                    input.nextLine();
                     break;
             }
         }
@@ -218,12 +221,8 @@ public class Cachorro {
         System.out.println("descreva o latido do cão(entre grosso ou fino):");
         raca.setLatido(input.nextLine());
         while (!raca.getLatido().equals("grosso") && !raca.getLatido().equals("fino")) {
-            try {
-                raca.setLatido(input.nextLine());
-            } catch (Exception e) {
-                tratexcept();
-                raca.setLatido(input.nextLine());
-            }
+            tratexcept();
+            raca.setLatido(input.nextLine());
         }
 
         // pega uivo
@@ -231,12 +230,8 @@ public class Cachorro {
         System.out.println("fale se o cão pode uivar:('s' para sim e 'n' para não)");
         raca.setUivar(input.nextLine());
         while (!raca.getUivar().equals("s") && !raca.getUivar().equals("n")) {
-            try {
-                raca.setUivar(input.nextLine());
-            } catch (Exception e) {
-                tratexcept();
-                raca.setUivar(input.nextLine());
-            }
+            tratexcept();
+            raca.setUivar(input.nextLine());
         }
         limpatela();
         // lógica p determinar a raça do cão //FEITO
@@ -282,7 +277,7 @@ public class Cachorro {
                 "agora as caracteristicas individuais e a conclusão do nosso sistema sobre a possivel raça do animal");
         pulaL();
 
-        switch (raca.getFocinho()) {
+        switch (raca.getFocinho()) { // define o tipo de focinho do cão a ser colocado na impressao da ficha
             case 1:
                 trueFocinho = "Braquicefálico";
                 break;
@@ -297,14 +292,14 @@ public class Cachorro {
         }
         System.out.printf("Tipo do focinho: %s%n", trueFocinho);
 
-        if (raca.getPelagem() == 1) {
+        if (raca.getPelagem() == 1) { // define o tipo da pelagem a ser impressa na ficha
             truePelagem = "Pelos Grossos";
         } else {
             truePelagem = "Pelos Finos";
         }
         System.out.printf("Tipo de pelagem: %s%n", truePelagem);
 
-        switch (raca.getCorDoPelo()) {
+        switch (raca.getCorDoPelo()) { // define a cor do pelo a ser impressa na ficha
             case 1:
                 trueCorDoPelo = "Preto com marcas marrom";
                 break;
@@ -333,7 +328,7 @@ public class Cachorro {
         }
         System.out.printf("A cor do pelo do animal é: %s%n", trueCorDoPelo);
 
-        switch (raca.getComportamento()) {
+        switch (raca.getComportamento()) { // define o comportamento do cao a ser impresso na ficha
             case 1:
                 trueComportamento = "equilibrado, dócil e obediente";
                 break;
@@ -360,7 +355,7 @@ public class Cachorro {
         pulaL();
         divisorAsterisco();
 
-        pulaL(); // encerra aplicação
+        pulaL(); // encerra aplicação ou avança pra etapa rpg do código
         System.out.printf("voce quer encerrar a aplicação ou visualizar os status do %s e brincar com ele?", nome);
         terminaAplicacao = input.nextLine();
         do {
@@ -410,6 +405,7 @@ public class Cachorro {
         dogeA.sleep();
         dogeA.showStats();
         dogeA.curar();
+
         input.close();
     }// fim metodo main
 
