@@ -23,14 +23,30 @@ public class ProgramaLabirinto {
         rat1.printarLabirinto();
         rat1.step(1);
         rat1.printarLabirinto();
-
-        for (int i=0;i<10000;i++){
-            System.out.printf("%d%n%n%n%n%n",i);
-            rat1.step(1);
-            rat1.printarLabirinto();
-            if(rat1.getIsFree())
-                break;
-        }
+        rat1.step(1);
+        rat1.printarLabirinto();
+        rat1.step(1);
+        rat1.printarLabirinto();
+        rat1.step(1);
+        rat1.printarLabirinto();
+        rat1.step(1);
+        rat1.printarLabirinto();
+        rat1.step(1);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
+        rat1.step(3);
+        rat1.printarLabirinto();
     }//Fim main
 
     //Printar labirinto original
