@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
         "Code/Prova1Q3",
-        "Code/prova1Q1e2"
+        "Code/prova1Q1e2",
+        "Code/Prova1Q4"
     ],
     "VSCord.appName": "Visual Studio Code"
 }
