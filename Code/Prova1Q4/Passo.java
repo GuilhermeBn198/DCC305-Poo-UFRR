@@ -1,6 +1,5 @@
 import java.util.Random;
 
-//criar run()
 public class Passo implements Runnable {
 
     Random randGen = new Random(); // Instancia um obj usado pra gerar num entre 0 e 3
@@ -12,11 +11,11 @@ public class Passo implements Runnable {
     Integer yRatoAnt = 1; // Linha anterior
     Integer xRatoAnt = 1; // Coluna anterior
     Integer decision = 0; // Utilizado pra decidir o caminho
-    char iD;
+    char iD; //pega o id do rato a ser mostrado no labirinto
     boolean isFreeFinally = false;
     TiqueTaque tt;
     Thread t;
-    final int num = 5000;
+    final int num = 5;
 
     char[][] labirintoRato = {
             { '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
@@ -38,11 +37,7 @@ public class Passo implements Runnable {
             { '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*', '*',
                     '*', '*', '*', '*', '*', 'S', '*', '*', '*', '*', '*', '*' } }; // Labirinto como atributo
 
-    // MÉTODO CONSTRUTOR, Inicia a thread ao ser criado um objeto do tipo
-    // PAsso(rato)
-    // AO SER CRIADO O OBJ, tu passa o nome, o tempo de pausa pra usar no sleep e o
-    // labirinto em si
-
+    // MÉTODO CONSTRUTOR, Inicia a thread ao ser criado um objeto do tipo Passo com os parametros a serem passados como o nome do rato, a classe TiqueTaque e o iD do rato, alem de instanciar uma nova thread em t e dar .start()
     public Passo(String nome, TiqueTaque tt, char iD) {
         this.nome = nome;
         this.tt = tt;
@@ -52,62 +47,60 @@ public class Passo implements Runnable {
     }
 
     public void run() {
-        //trySolve();
         setInicio();
-        if (t.getName().equalsIgnoreCase("tique")) {
-            for (int i = 0; i <= num; i++) {
-                tt.tique(true);
-                if (this.getIsFree()) {
-                    isFreeFinally=true;
-                    System.out.printf("%nParabéns, o rato %s chegou no final do labirinto.%n", nome);
-                    break;
-                }
-                System.out.printf("tentativa %d%n", i);
-                this.step();
-                this.printarLabirinto();
-            }
-            tt.tique(false);
-            } else {
-                for (int i = 0; i <= num; i++) {
-                    tt.tack(true);
+        switch (t.getName()) { //tentando aplicar switch pros ratos
+            case "ROBERTO":
+                for (int i = 0; i < num; i++) {
+                    tt.tique(true);
                     if (this.getIsFree()) {
                         isFreeFinally=true;
-                        System.out.printf("%nParabéns, o rato %s chegou no final do labirinto.%n", nome);
+                        System.out.printf("%nParabéns, o rato %s chegou no final do labirinto.%n", this.nome);
                         break;
                     }
-                    System.out.printf("tentativa %d%n", i);
+                    System.out.printf("tentativa %d%n", (i+1));
                     this.step();
                     this.printarLabirinto();
                 }
-            }
-            tt.tack(false);
-    }
-    
-
-    public void trySolve() {
-        setInicio();
-            // for (int i = 0; i <= NUM; i++) {
+                tt.tique(false);
+                break;
+            case "CARLA":
+                for (int i = 0; i < num; i++) {
+                    tt.tack(true);
+                    if (this.getIsFree()) {
+                        isFreeFinally=true;
+                        System.out.printf("%nParabéns, o rato %s chegou no final do labirinto.%n", this.nome);
+                        break;
+                    }
+                    System.out.printf("tentativa %d%n", (i+1));
+                    this.step();
+                    this.printarLabirinto();
+                }
+                tt.tack(false);
+                break; 
+            // case "GISELDA":
+            // for (int i = 0; i < num; i++) {
+            //     tt.tack(true);
             //     if (this.getIsFree()) {
             //         isFreeFinally=true;
             //         System.out.printf("%nParabéns, o rato %s chegou no final do labirinto.%n", nome);
             //         break;
             //     }
-            //     System.out.printf("tentativa %d%n", i);
+            //     System.out.printf("tentativa %d%n", (i+1));
             //     this.step();
             //     this.printarLabirinto();
-            //     try {
-            //         Thread.sleep(5);
-            //     } catch (Exception e) {
-            //         e.printStackTrace(); 
-            //     }
-            // } 
+            // }
+            // tt.tack(false);
+            // break;
+            default:
+                break;
+        }
     }
 
     public void setInicio() {
         this.labirintoRato[1][1] = iD; // iD Representa o Rato dentro do labirinto
     }
 
-    public void setPosition(Integer yR, Integer xR) {
+    public void setPosition(Integer yR, Integer xR) { // titulo autoexplicativo
         if (labirintoRato[yR][xR] == '@') {
 
             yRatoAnt = yRato;
@@ -132,7 +125,7 @@ public class Passo implements Runnable {
         }
     }
 
-    public void step() {
+    public void step() { //titulo autoexplicativo
         decision = randGen.nextInt(4); // gera um numero aleatorio de 0 a 3 e associa a decision
         switch (decision) {
             case 0: // CIMA
@@ -161,14 +154,13 @@ public class Passo implements Runnable {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 33; j++) {
                 System.out.printf("%c", labirintoRato[i][j]);
-
             }
            System.out.println("");
         } 
         System.out.println("");
     }// Fim printarLabirintow
 
-    public boolean getIsFree() {
+    public boolean getIsFree() { //retorna isFree
         return isFree;
     }
 
